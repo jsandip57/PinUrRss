@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PinUrRSS", "EasyPin\PinUrRSS.csproj", "{1575AD27-CEE3-415D-9080-A2CF6E864F60}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScheduledTaskAgent1", "ScheduledTaskAgent1\ScheduledTaskAgent1.csproj", "{7409EDFA-A1E8-4C2A-8948-2771EE3C72AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1575AD27-CEE3-415D-9080-A2CF6E864F60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1575AD27-CEE3-415D-9080-A2CF6E864F60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1575AD27-CEE3-415D-9080-A2CF6E864F60}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{1575AD27-CEE3-415D-9080-A2CF6E864F60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1575AD27-CEE3-415D-9080-A2CF6E864F60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1575AD27-CEE3-415D-9080-A2CF6E864F60}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{7409EDFA-A1E8-4C2A-8948-2771EE3C72AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7409EDFA-A1E8-4C2A-8948-2771EE3C72AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7409EDFA-A1E8-4C2A-8948-2771EE3C72AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7409EDFA-A1E8-4C2A-8948-2771EE3C72AD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,90 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="EasyPin.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="696"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+    <controls:Pivot Title="PinUrRSS" GotFocus="Pivot_GotFocus">
+        <!--Pivot item one-->
+        <controls:PivotItem Header="SearchRSS">
+            <!--LayoutRoot is the root grid where all page content is placed-->
+            <Grid x:Name="LayoutRoot" Background="Transparent">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!--ContentPanel - place additional content here-->
+                <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+                    <Image Visibility="Collapsed" Height="135" Name="Loading_for_Search" Stretch="Fill" VerticalAlignment="Top" Source="/PinUrRSS;component/Images/Loading____Please_Wait1.png" Margin="0,182,2,0" Width="430" />
+                    <Button Content="Search" Height="72" HorizontalAlignment="Left" Margin="264,-1,0,0" Name="btn_Search" VerticalAlignment="Top" Width="160" Click="btn_Search_Click" />
+                    <TextBox GotFocus="txt_Search_GotFocus" Height="78" InputScope="Chat" Text="Enter a keyword " HorizontalAlignment="Left" Margin="-8,-5,0,0" Name="txt_Search" VerticalAlignment="Top" Width="278" />
+                    <ListBox Height="461" HorizontalAlignment="Left" Margin="-4,73,0,0" Name="RssList" VerticalAlignment="Top" Width="433" >
+
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBlock Width="auto" DoubleTap="TextBlock_DoubleTap" Height="auto" Tag="{Binding Path=Tag}" Text="{Binding Path=Content}" FontSize="26" TextWrapping="Wrap" />
+                                    <TextBlock Width="auto" Foreground="LightBlue"  Height="auto" Text="{Binding Path=Tag}" FontSize="14" TextWrapping="Wrap" />
+                                    <TextBlock Width="auto" Foreground="Brown" Height="auto" Text="{Binding Path=Description}" FontSize="26" TextWrapping="Wrap" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
+            </Grid>
+        </controls:PivotItem>
+        <controls:PivotItem Header="Read">
+            <Grid x:Name="ReadRSS" Background="Transparent">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid x:Name="ContentPanelR" Grid.Row="1" Margin="12,0,12,0">
+                    <Image Visibility="Collapsed" Height="135" Name="Loading_for_Read" Stretch="Fill" VerticalAlignment="Top" Source="/PinUrRSS;component/Images/Loading____Please_Wait1.png" Margin="0,182,2,0" Width="430" />
+                    <ListBox Height="698" HorizontalAlignment="Left" Name="listBox1" VerticalAlignment="Top" Width="441" Margin="0,70,0,0">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBlock DoubleTap="TextBlock_DoubleTap" Foreground="BurlyWood" FontSize="32" Width="440" Height="auto" Tag="{Binding Path=Tag}" Text="{Binding Path=Content}" TextWrapping="Wrap" />
+                                    <Image Grid.Row="1" Margin="0,12,0,0" Name="image2" Stretch="Fill" VerticalAlignment="Top" Source="{Binding Path=Image}" />
+                                    <TextBlock Foreground="CadetBlue"  FontSize="15" Width="440" Height="auto" Text="{Binding Path=Pubdate}" TextWrapping="Wrap" />
+                                    <TextBlock Width="440" FontSize="24" Height="auto" Text="{Binding Path=Description}" TextWrapping="Wrap" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <Button Content="Read" Height="72" HorizontalAlignment="Left" Margin="255,1,0,0" Name="btn_SearchR" VerticalAlignment="Top" Width="160" Click="btn_SearchR_Click" />
+                    <TextBox GotFocus="txt_SearchR_GotFocus" Height="78" Text="Enter a URL to Read" HorizontalAlignment="Left" Margin="-8,-3,0,0" Name="txt_SearchR" VerticalAlignment="Top" Width="278" />
+                </Grid>
+                <Grid Margin="0,0,4,363" Background="LightGray" Name="PopUp" Visibility="Collapsed">
+                    <TextBox Height="72" HorizontalAlignment="Left" Margin="12,16,0,0" Name="TXT_Create" Text="TileName" VerticalAlignment="Top" Width="431" MaxLength="14" GotFocus="TXT_Create_GotFocus" />
+                    <Button Content="Create" Height="72" HorizontalAlignment="Left" Click="button1_Click" Margin="132,95,0,0" Name="button1" VerticalAlignment="Top" Width="160" Background="DarkKhaki"  BorderThickness="2" />
+                    <Button Background="DarkKhaki" BorderThickness="2" Content="Cancel" Height="72" HorizontalAlignment="Left" Margin="296,96,0,0" Name="Cancel" VerticalAlignment="Top" Width="160" Click="Cancel_Click"/>
+                </Grid>
+            </Grid>
+        </controls:PivotItem>
+    </controls:Pivot>
+    <!--Sample code showing usage of ApplicationBar-->
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/PINit.png" Text="Pin It" x:Name="Pinit" Click="Pinit_Click" />
+            <!--<shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>-->
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="Enable Update" Click="ApplicationBarMenuItem_Click" x:Name="Enable"/>
+                <shell:ApplicationBarMenuItem Text="Disable Update" Click="ApplicationBarMenuItem_Click_1" x:Name="Disable"/>
+                <shell:ApplicationBarMenuItem Text="Help.." Click="Help_Click"  x:Name="Help"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+</phone:PhoneApplicationPage>

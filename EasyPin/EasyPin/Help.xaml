@@ -1,0 +1,88 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="PinUrRSS.Help"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent" Height="758">
+        <ListBox Margin="12,12,0,0" Height="734" VerticalAlignment="Top">
+            <ListBoxItem>
+                <TextBlock HorizontalAlignment="Left" Name="textBlock2" TextWrapping="Wrap" Text="Search RSS:
+1-->Its nothing but a search engine. Enter a keyword (Eg.Windows phone 8) and click SEARCH will search this keyword in Serach4RSS website and display the result with a list of RSS links from different website which has contents related to the given Keyword." Width="468" />
+            </ListBoxItem>
+            <ListBoxItem>
+                <Image Height="317" Margin="100,50" Name="image1" Stretch="Fill" Width="236" Source="/PinUrRSS;component/Images/TestWindow_demo1.jpg" />
+            </ListBoxItem>
+            <ListBoxItem>
+                <TextBlock HorizontalAlignment="Left" Name="textBlock3" TextWrapping="Wrap" Text="2-->Double tap the title(HeadLine) will take you next windows where you can read the whole feed items." Width="468" />
+            </ListBoxItem>
+            <ListBoxItem>
+                <Image Height="350" Margin="100,50" Name="image2" Stretch="Fill" Width="260" Source="/PinUrRSS;component/Images/TestWindow_demo%20copy.jpg" />
+            </ListBoxItem>
+            <ListBoxItem>
+                <TextBlock HorizontalAlignment="Left" Name="Browse" TextWrapping="Wrap" Text="By this window you can read the original content by just double tapping the Title(Headline) of the item." Width="468" />
+            </ListBoxItem>
+            <ListBoxItem>
+                <TextBlock HorizontalAlignment="Left" Name="textBlock4" TextWrapping="Wrap" Text="3-->Now click the pinit option from the application bar to create a seperate tile for this rss link." Width="468" />
+            </ListBoxItem>
+            <ListBoxItem>
+                <Image Height="317" Margin="100,50" Name="image3" Stretch="Fill" Width="236" Source="/PinUrRSS;component/Images/TileCreate.jpg" />
+            </ListBoxItem>
+            <ListBoxItem>
+                <TextBlock HorizontalAlignment="Left" Name="textBlock5" TextWrapping="Wrap" Text="4-->Here enter the name for the Tile and click create." Width="468" />
+            </ListBoxItem>
+            <ListBoxItem>
+                <Image Height="317" Margin="100,50" Name="image4" Stretch="Fill" Width="236" Source="/PinUrRSS;component/Images/Livetile.jpg" />
+            </ListBoxItem>
+            <ListBoxItem>
+                <TextBlock HorizontalAlignment="Left" Name="textBlock6" TextWrapping="Wrap" Text="5-->You are done here are the tiles for different rss feeds." Width="468" />
+            </ListBoxItem>
+            <ListBoxItem>
+                <TextBlock HorizontalAlignment="Left" Name="textBlock7" TextWrapping="Wrap" Text="Now its in offline mode you can read at your own time by just tapping the tile." Width="468" />
+            </ListBoxItem>
+            <ListBoxItem>
+                <TextBlock HorizontalAlignment="Left" Name="textBlock8" TextWrapping="Wrap" Text="The below window show the rss feed items and at the bottom you will find a refresh button to ge new items from the selected RSS feeds." Width="468" />
+            </ListBoxItem>
+            <ListBoxItem>
+                <Image Height="317" Margin="100,50" Name="Navigate" Stretch="Fill" Width="236" Source="/PinUrRSS;component/Images/Navigate.jpg" />
+            </ListBoxItem>
+            <ListBoxItem>
+                <TextBlock HorizontalAlignment="Left" Name="textBlock9" TextWrapping="Wrap" Text="Here also the same just double tap the interested item to open it in a browser" Width="468" />
+            </ListBoxItem>
+            <ListBoxItem>
+                <Image Height="317" Margin="100,50" Name="Browser" Stretch="Fill" Width="236" Source="/PinUrRSS;component/Images/Browser.jpg" />
+            </ListBoxItem>
+            <ListBoxItem>
+                <TextBlock HorizontalAlignment="Left" Name="textBlock10" TextWrapping="Wrap" Text="This show the sample browser window displaying the whole content in the respected website." Width="468" />
+            </ListBoxItem>
+            <ListBoxItem>
+                <TextBlock HorizontalAlignment="Left" Name="textBlock11" TextWrapping="Wrap" Text="ReadRSS-This is absolutely a straight forward method. If you find any iteresting website and you want to get feeds from the website regularly just copy the rss link from the website and paste in this text box. Rest is the same here also you can create your own tile by clicking the Pinit button in the application bar." Width="468" />
+            </ListBoxItem>
+            <ListBoxItem>
+                <Image Height="317" Margin="100,50" Name="RSSLink" Stretch="Fill" Width="236" Source="/PinUrRSS;component/Images/RSS_Read_Link.jpg" />
+            </ListBoxItem>
+            <ListBoxItem>
+                <TextBlock HorizontalAlignment="Left" Name="textBlock12" TextWrapping="Wrap" Text="This is sample website with rss link.Just copy the link address and paste in the below window you are done." Width="468" />
+            </ListBoxItem>
+            <ListBoxItem>
+                <Image Height="317" Margin="100,50" Name="RSSRead" Stretch="Fill" Width="236" Source="/PinUrRSS;component/Images/ReadRss.jpg" />
+            </ListBoxItem>
+            <ListBoxItem>
+                <Image Height="317" Margin="100,50" Name="Update" Stretch="Fill" Width="236" Source="/PinUrRSS;component/Images/Update.jpg" />
+            </ListBoxItem>
+            <ListBoxItem>
+                <TextBlock HorizontalAlignment="Left" Name="textBlock13" TextWrapping="Wrap" Text="As said before if you create a tile for a given link your whole content is saved locally.By using this Update option you can update the tiles you created with new content from the local copy. Note:This option will update the tile for every 30 minutes(approx)." Width="468" />
+            </ListBoxItem>
+        </ListBox>
+    </Grid>
+</phone:PhoneApplicationPage>
